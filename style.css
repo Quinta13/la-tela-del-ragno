@@ -243,6 +243,8 @@ body.is-unlocked .login-screen {
 }
 
 .breaking-news-badge {
+  position: relative;
+  z-index: 2;
   flex: 0 0 auto;
   padding: 0.45rem 0.8rem;
   border-radius: 999px;
@@ -253,11 +255,19 @@ body.is-unlocked .login-screen {
   font-size: 0.78rem;
 }
 
+.breaking-news-marquee {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+}
+
 .breaking-news-track {
-  display: flex;
+  display: inline-flex;
   gap: 2rem;
+  width: max-content;
   white-space: nowrap;
-  animation: ticker 18s linear infinite;
+  animation: ticker 24s linear infinite;
   color: rgba(255, 255, 255, 0.9);
 }
 
@@ -441,6 +451,13 @@ body.is-unlocked .login-screen {
   background:
     linear-gradient(180deg, rgba(244, 239, 230, 0.96), rgba(235, 228, 214, 0.94));
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+.paper-panel p,
+.paper-panel li,
+.paper-panel strong,
+.paper-panel h3 {
+  color: var(--ink);
 }
 
 .paper-panel-dark {
@@ -637,6 +654,10 @@ body.is-unlocked .login-screen {
     flex-direction: column;
     align-items: flex-start;
     border-radius: 1rem;
+  }
+
+  .breaking-news-marquee {
+    width: 100%;
   }
 
   .breaking-news-track {
