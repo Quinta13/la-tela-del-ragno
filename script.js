@@ -37,14 +37,14 @@
       const expectedPassword = getConfiguredPassword();
 
       if (enteredPassword === expectedPassword) {
-        loginMessage.textContent = "Accesso autorizzato. Benvenuto in redazione.";
+        loginMessage.textContent = "Lorem ipsum dolor sit amet.";
         loginMessage.style.color = "#86efac";
         unlockSite();
         passwordInput.value = "";
         return;
       }
 
-      loginMessage.textContent = "Accesso negato alla redazione";
+      loginMessage.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
       loginMessage.style.color = "#ffd86e";
       passwordInput.value = "";
       passwordInput.focus();

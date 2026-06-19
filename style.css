@@ -55,11 +55,12 @@ body::before {
   z-index: 50;
   display: grid;
   place-items: center;
-  padding: 1rem;
+  padding: 0.75rem;
   background:
     radial-gradient(circle at top, rgba(217, 38, 50, 0.4), transparent 28%),
     linear-gradient(180deg, rgba(2, 5, 12, 0.94), rgba(2, 5, 12, 0.98));
   backdrop-filter: blur(10px);
+  overflow: hidden;
   transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease;
 }
 
@@ -71,8 +72,9 @@ body.is-unlocked .login-screen {
 }
 
 .login-card {
-  width: min(560px, 100%);
-  padding: 2rem;
+  width: min(520px, 100%);
+  max-height: calc(100dvh - 1.5rem);
+  padding: 1.5rem;
   border: 1px solid var(--line);
   border-radius: 1.5rem;
   background:
@@ -121,8 +123,8 @@ body.is-unlocked .login-screen {
 }
 
 .login-title {
-  margin: 0.5rem 0 1rem;
-  font-size: clamp(2.4rem, 6vw, 4rem);
+  margin: 0.35rem 0 0.85rem;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
   line-height: 0.95;
 }
 
@@ -136,9 +138,21 @@ body.is-unlocked .login-screen {
   color: rgba(247, 248, 251, 0.84);
 }
 
+.login-text {
+  font-size: 1.08rem;
+  line-height: 1.55;
+}
+
+.login-text-small {
+  font-size: 0.85em;
+  color: rgba(247, 248, 251, 0.7);
+}
+
 .login-featured-image {
   margin: 1rem 0 0;
-  padding: 0.75rem;
+  padding: 0.7rem;
+  display: grid;
+  place-items: center;
   border-radius: 1.2rem;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -146,20 +160,20 @@ body.is-unlocked .login-screen {
 
 .login-featured-image img {
   display: block;
-  width: 100%;
-  max-height: 250px;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
   border-radius: 0.95rem;
 }
 
-.login-featured-image figcaption {
-  margin-top: 0.7rem;
+.login-caption {
+  margin: 0.9rem 0 0;
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.92rem;
 }
 
 .login-form {
-  margin-top: 1rem;
+  margin-top: 0.9rem;
 }
 
 .login-message {
@@ -170,8 +184,23 @@ body.is-unlocked .login-screen {
 }
 
 .login-note {
-  margin: 1rem 0 0;
+  margin: 0.55rem 0 0;
   font-size: 0.92rem;
+}
+
+@media (max-height: 760px) {
+  .login-card {
+    width: min(460px, 100%);
+    padding: 1rem;
+  }
+
+  .login-title {
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
+  }
+
+  .login-featured-image img {
+    max-height: 120px;
+  }
 }
 
 .hero-shell {
